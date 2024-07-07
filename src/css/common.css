@@ -21,5 +21,4 @@ img {
   display: inline-flex;
   flex-direction: column;
   font-size: large;
-  /* justify-content: flex-start; */
 }
