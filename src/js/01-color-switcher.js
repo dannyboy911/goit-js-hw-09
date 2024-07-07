@@ -1,17 +1,16 @@
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
-}
+
 
 const bodyBackground = document.querySelector('body');
 const startChangingColors = document.querySelector('[data-start]');
 const stopChangingColors = document.querySelector('[data-stop]');
+const myParagraph = document.querySelector('#myParagraph a');
 let colorChangeDelay = null;
 
 startChangingColors.addEventListener('click', () => {
     startChangingColors.disabled = true;
     stopChangingColors.disabled = false;
-
-    colorChangeDelay = setInterval(() => {
+    myParagraph.style.visibility = 'hidden';
+        colorChangeDelay = setInterval(() => {
         bodyBackground.style.backgroundColor = getRandomHexColor();
     }, 1000);
 });
@@ -19,6 +18,12 @@ startChangingColors.addEventListener('click', () => {
 stopChangingColors.addEventListener('click', () => {
     stopChangingColors.disabled = true;
     startChangingColors.disabled = false;
-
-    clearInterval(colorChangeDelay);
+    myParagraph.style.visibility = 'visible';
+        clearInterval(colorChangeDelay);
 });
+
+
+    
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, 0)}`;
+};
