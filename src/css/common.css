@@ -19,6 +19,9 @@ img {
 
 .field {
   display: inline-flex;
-  flex-direction: column;
-  font-size: large;
+  /* flex-direction: column; */
+}
+
+.value {
+  font-size: 30px;
 }

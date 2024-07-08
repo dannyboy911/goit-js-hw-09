@@ -1,6 +1,6 @@
-// import flatpickr from "flatpickr";
-
-// import Notiflix from "notiflix";
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+import Notiflix from "notiflix";
 
 
 
@@ -31,7 +31,7 @@ const options = {
 
 flatpickr(dateTimeSetter, options);
 
-startButton.addEventListener('click', () => {
+function startCountdown() {
     const setDate = new Date(dateTimeSetter.value);
     clearInterval(countDownDisplay);
     countDownDisplay = setInterval(() => {
@@ -46,7 +46,11 @@ startButton.addEventListener('click', () => {
         }
         
     }, 1000);
-});
+}
+
+startButton.addEventListener('click', startCountdown);
+
+
 
 function convertMs(ms) {
   // Number of milliseconds per unit of time
